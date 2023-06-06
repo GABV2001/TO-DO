@@ -39,14 +39,20 @@ export default function App() {
   };
 
   return (
-    <div>
-      <h1>TO-DO List</h1>
-      <TodoForm addTodo={addTodo} editTodo={editTodo} selectedTodo={selectedTodo} cancelEdit={handleCancelEdit} />
-      {todos.length > 0 ? (
-        <TodoList todos={todos} deleteTodo={deleteTodo} handleEditClick={handleEditClick} />
-      ) : (
-        <p>No todos yet.</p>
-      )}
+    <div className="flex flex-col justify-center items-center">
+      <TodoForm
+        addTodo={addTodo}
+        editTodo={editTodo}
+        selectedTodo={selectedTodo}
+        cancelEdit={handleCancelEdit}
+      />
+      {
+        <TodoList
+          todos={todos}
+          deleteTodo={deleteTodo}
+          handleEditClick={handleEditClick}
+        />
+      }
     </div>
   );
 }
